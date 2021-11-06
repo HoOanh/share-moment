@@ -17,7 +17,7 @@ senBtn.onclick = () =>{
                     error.parentElement.style.display = 'flex';   
                 }else{
                     error.parentElement.style.display = 'none'; 
-                    location.href = 'index.html';
+                    location.href = 'index.php';
                 }  
                 
             }

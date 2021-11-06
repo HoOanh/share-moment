@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../dao/sign-up.php';
+require '../dao/pdo_sign-up.php';
 $img =  $_FILES['img'];
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
@@ -19,8 +19,8 @@ $user_name = trim(strip_tags($user_name));
 $phone = trim(strip_tags($phone));
 
 
-$output = '';
-if (!empty ($fname) && !empty ($lname) && !empty ($email) && !empty ($pass) && !empty ($gender) && !empty ($phone) && !empty ($user_name)  ) {
+$output = "";
+if (!empty ($fname) && !empty ($lname) && !empty ($email) && !empty ($pass) && !empty ($phone) && !empty ($user_name)  ) {
     if (filter_var($email,FILTER_VALIDATE_EMAIL)) {
         // kiểm tra email đã tồn tại hay chưa
         $checkEmail = checkEmail($email);
