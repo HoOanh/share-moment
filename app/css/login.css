@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    background-color: #f9fafb;
+}
+
+.right,
+.left {
+    flex: 1 1 50%;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.left .left-container {
+    width: 60%;
+}
+
+.left .left-container .left-logo {
+    width: 200px;
+}
+
+.left .left-container .left-logo img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.left .left-container p {
+    color: #666666;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    margin: 24px 0px 0px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+}
+
+.right .right-contaner {
+    padding: 24px;
+    width: 400px;
+    background-color: #fff;
+    box-shadow: 0 0 6px 5px rgba(0, 0, 0, .05);
+    border-radius: 3px;
+}
+
+.right .right-contaner .field {
+    position: relative;
+}
+
+.right .right-contaner .field {
+    margin-bottom: 16px;
+}
+
+.right .right-contaner .field input {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 18px 15px;
+    outline: none;
+    background-color: #ffffff;
+    border-color: #e0e0e0;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 1px;
+    color: #808080;
+    font-size: 16px;
+    line-height: 46px;
+}
+
+.right .right-contaner .field i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #666;
+    cursor: pointer;
+}
+
+.right .right-contaner .field i.active::before {
+    content: "\f070";
+    color: #333;
+}
+
+.right .right-contaner .btn-send {
+    align-items: flex-start;
+    background-color: #2563eb;
+    border-radius: 6px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    line-height: 22.5px;
+    margin: 16px 0px 0px;
+    padding: 12px;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.right .forgot-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 17px;
+    border-bottom: 1px solid rgb(197, 196, 196);
+}
+
+.right .forgot-link a {
+    text-align: center;
+    text-decoration: none;
+    color: #0056b3;
+    font-size: 15px;
+}
+
+.right .btn-signup {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.right .btn-signup a {
+    display: inline-block;
+    width: 65%;
+    background-color: rgb(16, 185, 129);
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.right .btn-signup a:hover {
+    background-color: rgba(16, 185, 129, .9);
+}
+
+@media (max-width: 800px) {
+    .left {
+        justify-content: center;
+    }
+}
