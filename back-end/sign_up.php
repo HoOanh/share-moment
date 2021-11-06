@@ -49,13 +49,10 @@ if (!empty ($fname) && !empty ($lname) && !empty ($email) && !empty ($pass) && !
 
                         // lua user
                         $addUser = addUser($random_id,$fname,$lname,$email,$pass,$final_img,$user_status,$gender,$phone,$user_name);
-                        if($addUser == 1){
+                        if($addUser){
                             $getUser = getUser('email',$email);
-                            if($getUser !== []){
-                                extract($getUser);
-                                $_SESSION['unique_id'] = $unique_id;
-                                
-
+                            if($getUser){
+                                $_SESSION['unique_id'] = $getUser['unique_id'];
                             }
                         }else{
                             $output = "Đăng ký không thành công !";

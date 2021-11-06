@@ -4,7 +4,7 @@
         $username = 'root';
         $password = '';
         $charset = 'utf8';
-        $dbname = 'chat_app';
+        $dbname = 'share-moment';
 
         try{
             $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
