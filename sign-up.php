@@ -18,8 +18,7 @@
                 <img class="header_wrap-logo-form" src="./images/header/logo.png" alt="" />
             </a>
             <div class="header_user-form">
-                <a href=""><button class="header_user-button-login">Login</button></a>
-                <a href=""><button class="header_user-button-register">Register</button></a
+                <a href="./login.php"><button class="header_user-button-register">Đăng nhập</button></a
             >
           </div>
         </div>

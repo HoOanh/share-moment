@@ -1,12 +1,12 @@
-var form = document.querySelector('.form1');
+var form = document.querySelector('.form2');
 form.onsubmit = (e)=>{
    e.preventDefault();
 }
 let error = document.querySelector('.er');
-var senBtn = document.querySelector('.send-btn');
+var senBtn = document.querySelector('.btn-send');
 senBtn.onclick = () =>{
     var http = new XMLHttpRequest();
-    http.open('post','./back-end/sign_up.php',true);
+    http.open('post','./back-end/login.php',true);
 
     http.onload = ()=>{
         if(http.readyState === XMLHttpRequest.DONE){
@@ -19,7 +19,6 @@ senBtn.onclick = () =>{
                     error.parentElement.style.display = 'none'; 
                     location.href = 'index.php';
                 }  
-                
             }
             
 
@@ -28,4 +27,3 @@ senBtn.onclick = () =>{
     let formData = new FormData(form);
     http.send(formData);// gui form
 }
-
