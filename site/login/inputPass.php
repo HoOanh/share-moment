@@ -27,21 +27,19 @@
     <div class="right">
         <div class="right-contaner">
             <form class="form2">
+                <div class="form-header">Nhập mật khẩu mới</div>
                 <div class="error">
                     <span class="er"></span>
                 </div>
-                <div class="field">
-                    <input type="text" placeholder="Tên đăng nhập" autocapitalize="off" name="user_name">
-                </div>
+            
+                <input type="text" value="<?=$_GET['token'] ?>" hidden name="token">
                 <div class="field">
                     <input type="password" placeholder="Mật khẩu" name="pass">
                     <i class="fas fa-eye"></i>
                 </div>
-                <div class="btn btn-send">Bắt đầu</div>
+                <div class="btn btn-send">Đổi mật khẩu</div>
             </form>
-            <div class="forgot-link">
-                <a href="?action=inputEmail">Quên mật khẩu?</a>
-            </div>
+           
             <div class="btn btn-signup">
                 <a href="../sign-up">Tạo tài khoản mới</a>
             </div>
@@ -50,7 +48,7 @@
     </div>
 
     <script src="../../app/js/pass-show-hide.js"></script>
-    <script src="../../app/ajax/login.js"></script>
+    <script src="../../app/ajax/checkToken.js"></script>
 </body>
 
 </html>

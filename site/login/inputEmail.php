@@ -27,21 +27,17 @@
     <div class="right">
         <div class="right-contaner">
             <form class="form2">
+                <div class="form-header">Quên mật khẩu</div>
                 <div class="error">
                     <span class="er"></span>
                 </div>
                 <div class="field">
-                    <input type="text" placeholder="Tên đăng nhập" autocapitalize="off" name="user_name">
+                    <input type="text" placeholder="Email của bạn" autocapitalize="off" name="email">
                 </div>
-                <div class="field">
-                    <input type="password" placeholder="Mật khẩu" name="pass">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="btn btn-send">Bắt đầu</div>
+               
+                <div class="btn btn-send">Gửi</div>
             </form>
-            <div class="forgot-link">
-                <a href="?action=inputEmail">Quên mật khẩu?</a>
-            </div>
+           
             <div class="btn btn-signup">
                 <a href="../sign-up">Tạo tài khoản mới</a>
             </div>
@@ -50,7 +46,7 @@
     </div>
 
     <script src="../../app/js/pass-show-hide.js"></script>
-    <script src="../../app/ajax/login.js"></script>
+    <script src="../../app/ajax/checkMail.js"></script>
 </body>
 
 </html>

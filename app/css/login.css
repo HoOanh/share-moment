@@ -55,6 +55,15 @@ body {
     justify-content: center;
 }
 
+.form-header {
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    margin: 0px 0px 24px;
+    text-align: left;
+}
+
 .right .right-contaner {
     padding: 24px;
     width: 400px;
@@ -169,18 +178,19 @@ body {
     }
 }
 
-.error{
+.error {
     width: 100%;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    background-color: rgba(231, 111, 81,0.7);
+    background-color: rgba(231, 111, 81, 0.7);
     border-radius: 7px;
     border: 1px solid #aaa;
     margin-bottom: 5px;
     display: none;
 }
-.error span{
+
+.error span {
     line-height: 1.5;
     font-size: 14px;
     color: white;
