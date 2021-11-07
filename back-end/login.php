@@ -22,6 +22,10 @@ if (!empty($pass) && !empty($user_name)) {
         if($role){
             $output["role"] = $role;
         }
+
+        $sql = "update users set user_status = 'Đang hoạt động' where unique_id = ?";
+        pdo_execute($sql,$_SESSION['unique_id']);
+
     }else{
         $output["data"] = "Mật khẩu hoặc tài khoản sai";
     }

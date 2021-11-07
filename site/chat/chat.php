@@ -776,7 +776,7 @@
                 </a>
               </li>
               <li>
-                <a href="" class="">
+                <a href="process.php?logout" class="">
                   <i class="fas fa-sign-out-alt"></i>
                   <p>Đăng Xuất</p>
                 </a>
