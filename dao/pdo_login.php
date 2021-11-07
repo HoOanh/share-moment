@@ -1,5 +1,5 @@
 <?php
-require_once 'pdo.php';
+
 
 function login($username,$password){
 $sql = "SELECT * FROM users where user_name = ? and pass = ?";

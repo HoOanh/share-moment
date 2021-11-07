@@ -1,5 +1,5 @@
 <?php
-require_once 'pdo.php';
+
 
 function checkEmail($email){
     $sql = " SELECT email FROM users WHERE email = '{$email}' ";
@@ -16,8 +16,7 @@ function addUser($random_id,$fname,$lname,$email,$pass,$final_img,$user_status,$
 }
 
 function getUser($field,$email){
-    $sql = "SELECT * FROM users WHERE ? = ? ";
-    return pdo_get_one_row($sql,$field,$email);
-
+    $sql = "SELECT * FROM users WHERE ". $field ." = ? ";
+    return pdo_get_one_row($sql,$email);
 }
 ?>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sharemoment | Sign up</title>
-    <link rel="stylesheet" href="./app/css/sign-up.css">
+    <link rel="stylesheet" href="../../app/css/sign-up.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
 </head>
@@ -18,7 +18,7 @@
                 <img class="header_wrap-logo-form" src="./images/header/logo.png" alt="" />
             </a>
             <div class="header_user-form">
-                <a href="./login.php"><button class="header_user-button-register">Đăng nhập</button></a
+                <a href="../login"><button class="header_user-button-register">Đăng nhập</button></a
             >
           </div>
         </div>
@@ -74,7 +74,7 @@
                     </div>
                     <div class="field">
                         <label>Số điện thoại</label>
-                        <input type="text" placeholder="+(84)869189734"  name="phone" required>
+                        <input type="text" placeholder="0123456789"  name="phone" required>
                     </div>
                 </div>
                 <div class="term">
@@ -102,9 +102,8 @@
         </footer>
 
 
-
-        <script src="./app/js/pass-show-hide.js"></script>
-        <script src="./app/js/sign_up.js"></script>
+        <script src="../../app/js/pass-show-hide.js"></script>
+        <script src="../../app/ajax/sign_up.js"></script>
 </body>
 
 </html>

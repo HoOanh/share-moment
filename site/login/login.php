@@ -10,7 +10,7 @@
     <!-- Font awesome cdnjs -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom css file -->
-    <link rel="stylesheet" href="./app/css/login.css">
+    <link rel="stylesheet" href="../../app/css/login.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
         <div class="left-container">
 
             <div class="left-logo">
-                <img src="./images/header/logo.png" alt="logo">
+                <img src="../../images/header/logo.png" alt="logo">
             </div>
             <p>Kết nối đến những người bạn và vòng quanh thế giới với Sharemoment</p>
         </div>
@@ -43,14 +43,14 @@
                 <a href="#">Quên mật khẩu?</a>
             </div>
             <div class="btn btn-signup">
-                <a href="./sign-up.php">Tạo tài khoản mới</a>
+                <a href="../sign-up">Tạo tài khoản mới</a>
             </div>
 
         </div>
     </div>
 
-    <script src="./app/js/pass-show-hide.js"></script>
-    <script src="./app/js/login.js"></script>
+    <script src="../../app/js/pass-show-hide.js"></script>
+    <script src="../../app/ajax/login.js"></script>
 </body>
 
 </html>
