@@ -15,7 +15,7 @@ if (!empty($email)) {
     if($result){
         // requier send mail
         $output["data"] = "success";
-        
+
     }else{
         $output["data"] = "Email không tồn tại";
     }
@@ -27,5 +27,5 @@ if (!empty($email)) {
 // Trả về dữ liệu kiểu JSON
 die(json_encode($output));
 
- 
+
 
