@@ -27,6 +27,19 @@
     };
 })();
 
+(function() {
+    // Khi nhập vào send, active cái nút gửi
+    const writeInput = document.querySelector(".write-input");
+    const sendBtn = document.querySelector(".write-send-btn");
+
+    writeInput.addEventListener("keyup", function() {
+        sendBtn.classList.add("active");
+        if (!writeInput.value) {
+            sendBtn.classList.remove("active");
+        }
+    });
+})();
+
 
 // (function() {
 //     const toggleDrops = document.querySelectorAll(".header_user-icon");

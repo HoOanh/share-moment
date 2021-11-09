@@ -749,9 +749,16 @@
       </div>
     </div>
     <!-- Section chat -->
-    <div class="section-chat">
-      
-    </div>
+    <?php 
+
+        $receiver = $_SESSION['unique_id'];
+        if(isset($_GET['receiver'])){
+          $receiver = $_GET['receiver'];
+        }
+
+        require "section-chat.php";
+    ?>
+
   </div>
 
   <!-- Custom JS -->
@@ -760,3 +767,7 @@
 </body>
 
 </html>
+
+
+
+<!--  -->
