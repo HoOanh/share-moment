@@ -21,10 +21,13 @@ chatContent.scroll(0, chatContentHeight);
     ".messenger__inbox-headline .fa-search"
   );
   let inboxHeadline = document.querySelector(".messenger__inbox-headline");
+  let searchInput = document.querySelector(".inp-search");
 
   btnSearch.onclick = function () {
     inboxHeadline.classList.toggle("active");
-    btnSearch.nextElementSibling.value = "";    
+    btnSearch.nextElementSibling.value = "";
+
+    searchInput.classList.remove("active");
   };
 })();
 
