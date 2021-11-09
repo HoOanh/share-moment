@@ -750,78 +750,7 @@
     </div>
     <!-- Section chat -->
     <div class="section-chat">
-      <div class="chat-name">
-        <h2 class="chat-name--name">Stella Johnson</h2>
-        <div class="chat-name--delete">
-          <i class="far fa-trash-alt"></i>Xóa lịch sử cuộc hội thoại
-        </div>
-      </div>
-      <div class="chat-content">
-        <div class="content-date">
-          <span>28 June, 2020</span>
-        </div>
-        <div class="content content-right">
-          <div class="content-avatar">
-            <img src="./images/section-chat/avatar-1.jpg" />
-          </div>
-          <span class="content-message">Consectetuer adipiscing elit, sed diam nonummy nibh euismod
-            laoreet.</span>
-        </div>
-        <div class="content content-left">
-          <div class="content-avatar">
-            <img src="./images/section-chat/avatar-2.jpg" />
-          </div>
-          <span class="content-message">Consectetuer adipiscing elit, sed diam nonummy nibh euismod
-            laoreet.</span>
-        </div>
-        <div class="content content-right">
-          <div class="content-avatar">
-            <img src="./images/section-chat/avatar-1.jpg" />
-          </div>
-          <span class="content-message">Consectetuer adipiscing elit, sed diam nonummy nibh euismod
-            laoreet.</span>
-        </div>
-        <div class="content-date">28 June, 2020</div>
-        <div class="content content-right">
-          <div class="content-avatar">
-            <img src="./images/section-chat/avatar-1.jpg" />
-          </div>
-          <span class="content-message">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-            🙂</span>
-        </div>
-        <div class="content content-left">
-          <div class="content-avatar">
-            <img src="./images/section-chat/avatar-2.jpg" />
-          </div>
-          <span class="content-message">Consectetuer adipiscing elit, sed diam nonummy nibh euismod
-            laoreet.</span>
-        </div>
-        <div class="content content-right">
-          <div class="content-avatar">
-            <img src="./images/section-chat/avatar-1.jpg" />
-          </div>
-          <span class="content-message">Consectetuer adipiscing elit, sed diam nonummy nibh euismod
-            laoreet.</span>
-        </div>
-        <div class="content content-left">
-          <div class="content-avatar">
-            <img src="./images/section-chat/avatar-2.jpg" />
-          </div>
-          <span class="content-message">
-            <div class="focus-message">
-              <div class="dot-1"></div>
-              <div class="dot-2"></div>
-              <div class="dot-3"></div>
-            </div>
-          </span>
-        </div>
-      </div>
-      <div class="chat-write">
-        <textarea type="text" class="write-input" placeholder="Nhắn tin ở đây"></textarea>
-        <div class="write-send-btn">
-          <span><i class="fas fa-paper-plane"></i></span>
-        </div>
-      </div>
+      
     </div>
   </div>
 

@@ -4,8 +4,8 @@ $name = $fname . " " . $lname;
 $status = "";
 if ($unique_id === $_SESSION['unique_id']) $name = 'Cloud của tôi';
 if ($user_status === "Đang hoạt động") $status = 'online';
-$output .= "<li class='messenger__item'>
- <a href='#'>
+$output .= "<li class='messenger__item' data=$unique_id>
+ <a >
    <div class='messenger__item-avatar $status'>
      <img src='../../images/user/$img' alt='' />
    </div>
