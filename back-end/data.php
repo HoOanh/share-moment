@@ -35,7 +35,7 @@ if ($lastMessage) {
 
 
 
-if ($unique_id === $_SESSION['unique_id']) $name = 'Cloud của tôi';
+
 if ($user_status === "Đang hoạt động") $status = 'online';
 $output .= "<li class='messenger__item' data=$unique_id>
  <a>

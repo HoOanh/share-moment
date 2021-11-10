@@ -1,5 +1,6 @@
 <?php
 require "../dao/pdo.php";
+session_start();
 $receiver = $_POST['receiver'];
 $sql = "SELECT * FROM message left join users
             on users.unique_id = message.receive_id
@@ -15,7 +16,10 @@ $receiver_info = pdo_get_one_row($sql, $receiver);
 
 <div class='chat-name'>
     <div id="receiver_id" data="<?php echo $receiver_info['unique_id'] ?>" hidden></div>
-    <h2 class='chat-name--name'><?php echo $receiver_info['fname'] . " " . $receiver_info['lname'] ?></h2>
+    <div>
+        <h2 class='chat-name--name'><?php echo $receiver_info['fname'] . " " . $receiver_info['lname'] ?><?php echo  $receiver_info['user_status'] == 'Đang hoạt động' ? "<span class='status online'> {$receiver_info['user_status']}" : "<span class='status offline'> {$receiver_info['user_status']}" ?></span></h2>
+
+    </div>
     <div class='chat-name--delete'>
         <i class='far fa-trash-alt'></i>Xóa lịch sử cuộc hội thoại
     </div>
@@ -31,7 +35,7 @@ $receiver_info = pdo_get_one_row($sql, $receiver);
         $checkDay = true;
         foreach ($allMess as $mess) {
             extract($mess);
-
+            $content = nl2br($content);
             // set up ngày tháng
 
             $d =  explode("-", explode(" ", $mess['time'])[0])[2];
@@ -82,7 +86,7 @@ $receiver_info = pdo_get_one_row($sql, $receiver);
                     </div>
                     <div class='content content-left'>
                     <div class='content-avatar'>
-                        <img src='../../images/user/$img' />
+                        <img src='../../images/user/{$receiver_info['img']}' />
                     </div>
                         <span class='content-message'>$content</span>
                         <div class='small-time'>{$smallTime}</div>

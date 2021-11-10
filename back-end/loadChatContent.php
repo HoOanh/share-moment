@@ -28,7 +28,7 @@ if (!$allMess) {
     $checkDay = true;
     foreach ($allMess as $mess) {
         extract($mess);
-
+        $content = nl2br($content);
 
         // set up ngày tháng
 
@@ -77,7 +77,7 @@ if (!$allMess) {
             $output .= "
             <div class='content-date'>
                     <span>{$when}</span>
-                    </div>
+            </div>
             <div class='content content-left'>
             <div class='content-avatar'>
                 <img src='../../images/user/{$receiver_info['img']} ' />
@@ -89,5 +89,6 @@ if (!$allMess) {
     }
 }
 
-echo nl2br($output);
+// echo nl2br($output);
+echo $output;
 

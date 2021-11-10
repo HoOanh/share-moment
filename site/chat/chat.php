@@ -750,6 +750,7 @@
     </div>
     <!-- Section chat -->
     <div class="section-chat">
+
     </div>
 
   </div>
@@ -761,7 +762,5 @@
 </body>
 
 </html>
-
-
 
 <!--  -->
