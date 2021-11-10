@@ -32,37 +32,37 @@ if (!$allMess) {
 
         // set up ngày tháng
 
-        $d =  explode("-",explode(" ",$mess['time'])[0])[2];
-        $h =  explode(":",explode(" ",$mess['time'])[1])[0];
-        $m =  explode(":",explode(" ",$mess['time'])[1])[1];
+        $d =  explode("-", explode(" ", $mess['time'])[0])[2];
+        $h =  explode(":", explode(" ", $mess['time'])[1])[0];
+        $m =  explode(":", explode(" ", $mess['time'])[1])[1];
 
-        $nowD = date('d', time()+3600*6);
-        $nowH = date('H', time()+3600*6);
-        $nowM = date('i', time()+3600*6);
+        $nowD = date('d', time() + 3600 * 6);
+        $nowH = date('H', time() + 3600 * 6);
+        $nowM = date('i', time() + 3600 * 6);
 
 
 
         $when = "";
-        $time = $nowD - $d;
-        $smallTime = $h. ":".$m;
-    
+        $datetime1 = strtotime($mess['time']);
+        $datetime2 = strtotime(date('Y/m/d H:i:s', time() + 3600 * 6));
 
-        if ($time < 1){
-            if($checkDay){
+        $minus = $datetime2 - $datetime1;
+        $smallTime = $h . ":" . $m;
+
+
+        if ($minus < 3600*24) {
+            if ($checkDay) {
                 $when = "Hôm nay";
                 $checkDay = false;
             }
         }
-        if ($time >= 1) {
-            if ($time == 1) {
-                $when = "Hôm qua";
-            } else {
+        else if($minus >= 3600*24) {
+            
                 $tempTime = explode("-", explode(" ", $mess['time'])[0]);
                 $tempTime = array_reverse(array_slice($tempTime, 1));
-
                 $when = implode(" Tháng ", $tempTime);
-            }
         }
+        
 
         if ($send_id == $_SESSION['unique_id']) {
             $output .= "
@@ -91,4 +91,3 @@ if (!$allMess) {
 
 // echo nl2br($output);
 echo $output;
-

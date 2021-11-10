@@ -49,28 +49,26 @@ else $name = $receiver_info['fname'] . " " . $receiver_info['lname'];
             $nowH = date('H', time() + 3600 * 6);
             $nowM = date('i', time() + 3600 * 6);
 
+            $datetime1 = strtotime($mess['time']);
+            $datetime2 = strtotime(date('Y/m/d H:i:s', time() + 3600 * 6));
 
 
             $when = "";
-            $time = $nowD - $d;
+            $minus = $datetime2 - $datetime1;
 
             $smallTime = $h . ":" . $m;
 
-            if ($time < 1) {
+            if ($minus < 3600 * 24) {
                 if ($checkDay) {
                     $when = "Hôm nay";
                     $checkDay = false;
                 }
-            }
-            if ($time >= 1) {
-                if ($time == 1) {
-                    $when = "Hôm qua";
-                } else {
-                    $tempTime = explode("-", explode(" ", $mess['time'])[0]);
-                    $tempTime = array_reverse(array_slice($tempTime, 1));
+            } else if ($minus >= 3600 * 24) {
 
-                    $when = implode(" Tháng ", $tempTime);
-                }
+                $tempTime = explode("-", explode(" ", $mess['time'])[0]);
+                $tempTime = array_reverse(array_slice($tempTime, 1));
+
+                $when = implode(" Tháng ", $tempTime);
             }
 
             if ($send_id == $_SESSION['unique_id']) {
