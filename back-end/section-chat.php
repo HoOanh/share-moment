@@ -1,4 +1,5 @@
 <?php
+session_start();
 require "../dao/pdo.php";
 $receiver = $_POST['receiver'];
 $sql = "SELECT * FROM message left join users
@@ -10,12 +11,15 @@ $allMess = pdo_get_all_rows($sql, $receiver, $_SESSION['unique_id'], $_SESSION['
 $sql = "SELECT * FROM users WHERE unique_id = ?";
 
 $receiver_info = pdo_get_one_row($sql, $receiver);
-
+if ($receiver ===  $_SESSION['unique_id']) $name = "Cloud của tôi";
+else $name = $receiver_info['fname'] . " " . $receiver_info['lname'];
 ?>
+
+
 
 <div class='chat-name'>
     <div id="receiver_id" data="<?php echo $receiver_info['unique_id'] ?>" hidden></div>
-    <h2 class='chat-name--name'><?php echo $receiver_info['fname'] . " " . $receiver_info['lname'] ?></h2>
+    <h2 class='chat-name--name'><?= $name ?></h2>
     <div class='chat-name--delete'>
         <i class='far fa-trash-alt'></i>Xóa lịch sử cuộc hội thoại
     </div>
