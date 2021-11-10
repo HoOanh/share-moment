@@ -749,20 +749,14 @@
       </div>
     </div>
     <!-- Section chat -->
-    <?php 
-
-        $receiver = $_SESSION['unique_id'];
-        if(isset($_GET['receiver'])){
-          $receiver = $_GET['receiver'];
-        }
-
-        require "section-chat.php";
-    ?>
+    <div class="section-chat">
+    </div>
 
   </div>
 
   <!-- Custom JS -->
   <script src="../../app/js/script.js"></script>
+  <script src="../../app/ajax/mess.js"></script>
   <script src="../../app/ajax/user.js"></script>
 </body>
 

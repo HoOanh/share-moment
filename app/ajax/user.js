@@ -1,46 +1,70 @@
+    
 let userContainer = document.querySelector(".messenger__list");
 let searchInput = document.querySelector(".inp-search");
 
 searchInput.onkeyup = () => {
-    let searchValue = searchInput.value;
-    if (searchValue != "") {
-        searchInput.classList.add("active");
-    } else {
-        searchInput.classList.remove("active");
+  let searchValue = searchInput.value;
+  if (searchValue != "") {
+    searchInput.classList.add("active");
+  } else {
+    searchInput.classList.remove("active");
+  }
+  var http = new XMLHttpRequest();
+  http.open("post", "../../back-end/search.php", true);
+
+  http.onload = () => {
+    if (http.readyState === XMLHttpRequest.DONE) {
+      if (http.status === 200) {
+        var data = http.response;
+
+        userContainer.innerHTML = data;
+      }
     }
-    var http = new XMLHttpRequest();
-    http.open("post", "../../back-end/search.php", true);
-
-    http.onload = () => {
-        if (http.readyState === XMLHttpRequest.DONE) {
-            if (http.status === 200) {
-                var data = http.response;
-
-                userContainer.innerHTML = data;
-            }
-        }
-    };
-    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    http.send("searchValue=" + searchValue); // gui form
+  };
+  http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  http.send("searchValue=" + searchValue); // gui form
 };
 
 setInterval(() => {
-    var http = new XMLHttpRequest();
-    http.open("post", "../../back-end/user.php", true);
+  var http = new XMLHttpRequest();
+  http.open("post", "../../back-end/user.php", true);
 
-    http.onload = () => {
+  http.onload = () => {
+    if (http.readyState === XMLHttpRequest.DONE) {
+      if (http.status === 200) {
+        var data = http.response;
 
-        if (http.readyState === XMLHttpRequest.DONE) {
-            if (http.status === 200) {
-                var data = http.response;
+        if (!searchInput.classList.contains("active")) {
+          userContainer.innerHTML = data;
 
-                if (!searchInput.classList.contains("active")) {
-                    userContainer.innerHTML = data;
+          const userItem = document.querySelectorAll(".messenger__item"),
+            sectionChat = document.querySelector(".section-chat");
+
+          userItem.forEach((item) => {
+            item.onclick = () => {
+              let receiver = item.getAttribute("data");
+              var http = new XMLHttpRequest();
+              http.open("post", "../../back-end/section-chat.php", true);
+
+              http.onload = () => {
+                if (http.readyState === XMLHttpRequest.DONE) {
+                  if (http.status === 200) {
+                    var data = http.response;
+                    sectionChat.innerHTML = data;
+                    mess();
+                  }
                 }
-
-            }
-
+              };
+              http.setRequestHeader(
+                "Content-type",
+                "application/x-www-form-urlencoded"
+              );
+              http.send("receiver=" + receiver);
+            };
+          });
         }
-    };
-    http.send();
+      }
+    }
+  };
+  http.send();
 }, 500);
