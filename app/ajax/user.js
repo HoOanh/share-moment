@@ -1,4 +1,3 @@
-    
 let userContainer = document.querySelector(".messenger__list");
 let searchInput = document.querySelector(".inp-search");
 
@@ -18,6 +17,32 @@ searchInput.onkeyup = () => {
         var data = http.response;
 
         userContainer.innerHTML = data;
+
+        const userItem = document.querySelectorAll(".messenger__item"),
+          sectionChat = document.querySelector(".section-chat");
+
+        userItem.forEach((item) => {
+          item.onclick = () => {
+            let receiver = item.getAttribute("data");
+            var http = new XMLHttpRequest();
+            http.open("post", "../../back-end/section-chat.php", true);
+
+            http.onload = () => {
+              if (http.readyState === XMLHttpRequest.DONE) {
+                if (http.status === 200) {
+                  var data = http.response;
+                  sectionChat.innerHTML = data;
+                  mess();
+                }
+              }
+            };
+            http.setRequestHeader(
+              "Content-type",
+              "application/x-www-form-urlencoded"
+            );
+            http.send("receiver=" + receiver);
+          };
+        });
       }
     }
   };
