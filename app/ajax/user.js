@@ -19,10 +19,15 @@ searchInput.onkeyup = () => {
         userContainer.innerHTML = data;
 
         const userItem = document.querySelectorAll(".messenger__item"),
-          sectionChat = document.querySelector(".section-chat");
+          sectionChat = document.querySelector(".section-chat"),
+          inboxHeadline = document.querySelector(".messenger__inbox-headline");
 
         userItem.forEach((item) => {
           item.onclick = () => {
+            searchInput.value = "";
+            inboxHeadline.classList.remove("active");
+            searchInput.classList.remove("active");
+
             let receiver = item.getAttribute("data");
             var http = new XMLHttpRequest();
             http.open("post", "../../back-end/section-chat.php", true);
