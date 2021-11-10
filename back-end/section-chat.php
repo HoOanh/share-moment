@@ -1,6 +1,6 @@
 <?php
-require "../dao/pdo.php";
 session_start();
+require "../dao/pdo.php";
 $receiver = $_POST['receiver'];
 $sql = "SELECT * FROM message left join users
             on users.unique_id = message.receive_id
@@ -11,8 +11,11 @@ $allMess = pdo_get_all_rows($sql, $receiver, $_SESSION['unique_id'], $_SESSION['
 $sql = "SELECT * FROM users WHERE unique_id = ?";
 
 $receiver_info = pdo_get_one_row($sql, $receiver);
-
+if ($receiver ===  $_SESSION['unique_id']) $name = "Cloud của tôi";
+else $name = $receiver_info['fname'] . " " . $receiver_info['lname'];
 ?>
+
+
 
 <div class='chat-name'>
     <div id="receiver_id" data="<?php echo $receiver_info['unique_id'] ?>" hidden></div>
