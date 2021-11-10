@@ -41,34 +41,34 @@
 })();
 
 
-// (function() {
-//     const toggleDrops = document.querySelectorAll(".header_user-icon");
-//     toggleDrops.forEach((e) => {
-//         e.addEventListener("click", function() {
-//             const content = e.nextElementSibling;
+(function() {
+    const toggleDrops = document.querySelectorAll(".header_user-icon");
+    toggleDrops.forEach((e) => {
+        e.addEventListener("click", function() {
+            const content = e.nextElementSibling;
 
-//             toggleDrops.forEach((ele) => {
-//                 if (ele != e) {
-//                     ele.nextElementSibling.classList.remove("active");
-//                 }
-//             });
+            toggleDrops.forEach((ele) => {
+                if (ele != e) {
+                    ele.nextElementSibling.classList.remove("active");
+                }
+            });
 
-//             content.classList.toggle("active");
-//         });
-//     });
+            content.classList.toggle("active");
+        });
+    });
 
-//     document.addEventListener("click", (e) => {
-//         let clickedOutside = true;
-//         e.path.forEach((item) => {
-//             if (!clickedOutside) return;
+    document.addEventListener("click", (e) => {
+        let clickedOutside = true;
+        e.path.forEach((item) => {
+            if (!clickedOutside) return;
 
-//             if (item.className === "header_wrap") clickedOutside = false;
-//         });
+            if (item.className === "header_wrap") clickedOutside = false;
+        });
 
-//         if (clickedOutside) {
-//             toggleDrops.forEach((e) => {
-//                 e.nextElementSibling.classList.remove("active");
-//             });
-//         }
-//     });
-// })();
+        if (clickedOutside) {
+            toggleDrops.forEach((e) => {
+                e.nextElementSibling.classList.remove("active");
+            });
+        }
+    });
+})();
