@@ -12,7 +12,7 @@ if ($lastMessage) {
   // if(strlen($lastMessage['content']) >= 30){
   //   $last = substr($lastMessage['content'],0,30) + "...";
   // }
-  if ($lastMessage['send_id'] == $_SESSION['unique_id']) $last = "Bạn: " . $lastMessage['content'];
+  if ($lastMessage['send_id'] == $_SESSION['unique_id']) $last = "<strong>Bạn:</strong> " . $lastMessage['content'];
   else $last = $lastMessage['content'];
 
   $datetime1 = strtotime($lastMessage['time']);

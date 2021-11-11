@@ -72,9 +72,8 @@ function mess() {
               let data = http.response;
               if (data == "success") {
                 messageInput.value = "";
-                if (content.length == 0) {
-                  sendBtn.classList.remove("active");
-                }
+                content = "";
+                sendBtn.classList.remove("active");
               }
             }
           }

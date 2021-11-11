@@ -635,7 +635,7 @@
     <div class="sideBar">
       <div class="toolList">
         <div class="tool tool-feed">
-          <a href="#"> <i class="fas fa-home"></i></a>
+          <a href="../home/"> <i class="fas fa-home"></i></a>
           <div class="tool_popup">
             <span>Bảng Tin</span>
           </div>
@@ -750,7 +750,8 @@
     </div>
     <!-- Section chat -->
     <div class="section-chat">
-
+      <?php if (isset($_GET['box_id']))
+        require "../../back-end/section-chat-first.php" ?>
     </div>
 
   </div>
