@@ -50,7 +50,7 @@ if (!$allMess) {
         $smallTime = $h . ":" . $m;
 
 
-        if ($minus < 3600*24) {
+        if ($minus < 3600*24 && $nowD - $d ==0) {
             if ($checkDay) {
                 $when = "Hôm nay";
                 $checkDay = false;
